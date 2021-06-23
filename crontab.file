@@ -1,0 +1,17 @@
+#
+# Wed Jun 23 18:27:59 CEST 2021
+# Autor: Leonid Burmistrov
+#
+# Crontab file for stud
+#
+# Useful crontab commands :
+# To see the setup file for crontab
+# > crontab -l
+#
+# To define setup file for crontab
+# > crontab crontab.file
+#
+# To stop crontab
+# crontab -r
+#
+1 * * * * /home/burmist/home2/historylog/historylog.sh -d
