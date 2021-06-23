@@ -1,0 +1,23 @@
+# Autor: Leonid Burmistrov
+#        Luka Santelj
+#        Masaki Kobayashi
+#
+# crontab file for monitorting HV control deamon
+#
+# Useful crontab commands :
+# To see the setup file for crontab
+# > crontab -l
+#
+# To define setup file for crontab
+# > crontab crontab.file
+#
+# To stop crontab
+# crontab -r
+#/home/usr/hvala/yone/sh/crontab.file
+20 8 * * * /home/usr/hvala/ntptools/ntpLoopstatsOne.bash -email /var/log/ntpstats/loopstatspr
+7 * * * * /home/usr/hvala/pcstatlog/pcStatLog.bash -d
+10 * * * * /home/usr/hvala/pcstatlog/pcIOstat.bash -d
+40 * * * * /home/usr/hvala/pcstatlog/runanapcstat_crontab.bash -ar1
+*/10 * * * * bash /disk/data/www/data/dqm/runRoot.sh
+
+5 0 * * * bash /home/usr/hvala/mon2root_MK/od_daily_check/autoplot_master.sh > /home/usr/hvala/mon2root_MK/od_daily_check/logdir/autoplot.log

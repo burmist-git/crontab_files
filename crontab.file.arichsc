@@ -1,0 +1,31 @@
+#
+# Sat Jun  9 10:33:33 JST 2018
+# Autor: Masanobu Yonenaga, Leonid Burmistrov
+#
+# crontab file for monitorting HV control deamon
+#
+# Useful crontab commands :
+# To see the setup file for crontab
+# > crontab -l
+#
+# To define setup file for crontab
+# > crontab crontab.file
+#
+# To stop crontab
+# crontab -r
+#
+#/home/usr/hvala/yone/sh/crontab.file
+* * * * * cd /home/usr/hvala/yone/sh/ ; bash /home/usr/hvala/yone/sh/process_monitor.sh
+* * * * * bash /home/usr/hvala/yone/sh/process_monitor_nsm2cad.sh
+58 8 * * * /home/usr/hvala/ntptools/ntpLoopstatsOne.bash -email /var/log/ntpstats/loopstats
+7 * * * * /home/usr/hvala/pcstatlog/pcStatLog.bash -d
+10 * * * * /home/usr/hvala/pcstatlog/pcIOstat.bash -d
+57 * * * * /home/usr/hvala/pcstatlog/runanapcstat_crontab.bash -ar1
+1,11,21,31,41,51 * * * * /home/usr/hvala/ari_hv_monitor/get_hvbias_info.sh -secI 1 
+2,12,22,32,42,52 * * * * /home/usr/hvala/ari_hv_monitor/get_hvbias_info.sh -secI 2
+3,13,23,33,43,53 * * * * /home/usr/hvala/ari_hv_monitor/get_hvbias_info.sh -secI 3
+4,14,24,34,44,54 * * * * /home/usr/hvala/ari_hv_monitor/get_hvbias_info.sh -secI 4
+5,15,25,35,45,55 * * * * /home/usr/hvala/ari_hv_monitor/get_hvbias_info.sh -secI 5
+6,16,26,36,46,56 * * * * /home/usr/hvala/ari_hv_monitor/get_hvbias_info.sh -secI 6
+8,18,28,38,48,58 * * * * /home/usr/hvala/ari_hv_monitor/merge_Root_hvbias_params.sh -d
+55 23 * * * /home/usr/hvala/ari_hv_monitor/compressRawData.bash -d

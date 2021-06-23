@@ -1,0 +1,28 @@
+#
+# Fri May 7 23:20:19 JST 2019
+# Autor: Leonid Burmistrov
+#
+# Crontab file for stud
+#
+# Useful crontab commands :
+# To see the setup file for crontab
+# > crontab -l
+#
+# To define setup file for crontab
+# > crontab crontab.file
+#
+# To stop crontab
+# crontab -r
+#
+<<<<<<< Updated upstream
+58 8 * * * /home/stud/ntptools/ntpLoopstatsOne.bash -d /var/log/ntpstats/loopstats
+7 * * * * /home/stud/pcstatlog/pcStatLog.bash -d
+10 * * * * /home/stud/pcstatlog/pcIOstat.bash -d
+40 * * * * /home/stud/pcstatlog/runanapcstat_crontab.bash -d
+=======
+58 8 * * * /home/burmist/home2/ntptools/ntpLoopstatsOne.bash -email /var/log/ntpstats/loopstats
+7 * * * * /home/burmist/home2/pcstatlog/pcStatLog.bash -d
+10 * * * * /home/burmist/home2/pcstatlog/pcIOstat.bash -d
+40 * * * * /home/burmist/home2/pcstatlog/runanapcstat_crontab.bash -d
+1 * * * * /home/burmist/home2/historylog/historylog.sh -d
+>>>>>>> Stashed changes

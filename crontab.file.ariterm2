@@ -1,0 +1,20 @@
+#
+# Thu May  9 11:42:44 JST 2019
+# Autor: Leonid Burmistrov
+#
+# Crontab file for ariterm2
+#
+# Useful crontab commands :
+# To see the setup file for crontab
+# > crontab -l
+#
+# To define setup file for crontab
+# > crontab crontab.file
+#
+# To stop crontab
+# crontab -r
+#
+58 8 * * * /home/hvala/leonid/ntptools/ntpLoopstatsOne.bash -email /var/log/ntpstats/loopstats
+7 * * * * /home/hvala/leonid/pcstatlog/pcStatLog.bash -d
+10 * * * * /home/hvala/leonid/pcstatlog/pcIOstat.bash -d
+40 * * * * /home/hvala/leonid/pcstatlog/runanapcstat_crontab.bash -ar1

@@ -1,0 +1,20 @@
+#
+# Wed May 15 11:09:13 JST 2019
+# Autor: Leonid Burmistrov
+#
+# Crontab file for teshep01
+#
+# Useful crontab commands :
+# To see the setup file for crontab
+# > crontab -l
+#
+# To define setup file for crontab
+# > crontab crontab.file
+#
+# To stop crontab
+# crontab -r
+#
+58 8 * * * /home/stud/ntptools/ntpLoopstatsOne.bash -d /var/log/ntpstats/loopstats
+7 * * * * /home/stud/pcstatlog/pcStatLog.bash -d
+10 * * * * /home/stud/pcstatlog/pcIOstat.bash -d
+40 * * * * /home/stud/pcstatlog/runanapcstat_crontab.bash -d

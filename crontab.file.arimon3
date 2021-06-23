@@ -1,0 +1,20 @@
+#
+# Fri May 7 23:20:19 JST 2019
+# Autor: Leonid Burmistrov
+#
+# Crontab file for arimon3
+#
+# Useful crontab commands :
+# To see the setup file for crontab
+# > crontab -l
+#
+# To define setup file for crontab
+# > crontab crontab.file
+#
+# To stop crontab
+# crontab -r
+#
+7 * * * * /home/hvala/pcstatlog/pcStatLog.bash -d
+10 * * * * /home/hvala/pcstatlog/pcIOstat.bash -d
+58 8 * * * /home/hvala/ntptools/ntpLoopstatsOne.bash -email /var/log/ntpstats/loopstats
+40 * * * * /home/hvala/pcstatlog/runanapcstat_crontab.bash -ar1
