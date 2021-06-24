@@ -14,4 +14,4 @@
 # To stop crontab
 # crontab -r
 #
-1 * * * * /home/burmist/home2/historylog/historylog.sh -d
+1 * * * * /home/burmist/historylog/historylog.sh -d
